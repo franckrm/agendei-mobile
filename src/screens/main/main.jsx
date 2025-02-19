@@ -1,7 +1,6 @@
-import {NavigationContainer} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AbaHome from "../abahome/abahome";
-import AbaCalendar from "../abacalendar/abacalendar";
+import AbaHome from "../abahome/abahome.jsx";
+import AbaCalendar from "../abacalendar/abacalendar.jsx";
 import AbaProfile from "../abaprofile/abaprofile.jsx";
 import { Image } from "react-native";
 import icon from "../../constants/icon.js"
@@ -10,8 +9,7 @@ const Tab = createBottomTabNavigator();
 
 
 function Main(){
- return <NavigationContainer>
-    <Tab.Navigator>
+ return <Tab.Navigator>
         <Tab.Screen name="Home" component={AbaHome} options={{
             headerTitleAlign: "center",
             headerShadowVisible: false, // applied here
@@ -46,7 +44,7 @@ function Main(){
             }
         }}/>
     </Tab.Navigator>
- </NavigationContainer>
+
 }
 
 export default Main;

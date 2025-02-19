@@ -9,10 +9,18 @@ import Button from "../../components/button/button.jsx";
 LocaleConfig.locales["pt-br"] = ptBR;
 LocaleConfig.defaultLocale = "pt-br";
 
-function Schedule(){
+function Schedule(props){
+
+
+    const id_doctor = props.route.params.id_doctor;
+    const id_service = props.route.params.id_service;
 
     const [selectedDate, setSelectedDate] = useState("");//new Date().toISOString().slice(0,10)
-    const [selectedHours, setSelectedHours] = useState("");
+    const [selectedHour, setSelectedHour] = useState("");
+
+    function ClickBooking(){
+        console.log(id_doctor, id_service, selectedDate, selectedHour)
+    }
 
     return <View style={styles.container}>
         <View>
@@ -28,8 +36,8 @@ function Schedule(){
                 <Text style={styles.textHour}>Horário</Text>
             </View>
             <View>
-                <Picker selectedValue={selectedHours}
-                    onValueChange={(itemValue, itemIndex)=> setSelectedHours(itemValue)}
+                <Picker selectedValue={selectedHour}
+                    onValueChange={(itemValue, itemIndex)=> setSelectedHour(itemValue)}
                 >
                     <Picker.Item label="09:00" value="09:00" />
                     <Picker.Item label="09:30" value="09:30" />
@@ -38,7 +46,7 @@ function Schedule(){
             </View>
         </View>
         <View>
-            <Button text="Confirmar Reserva" />
+            <Button text="Confirmar Reserva" onPress={ClickBooking} />
         </View>
             
     </View>
