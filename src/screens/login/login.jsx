@@ -5,10 +5,10 @@ import Button from "../../components/button/button"
 import { useState } from "react";
 import api from "../../constants/api.js";
 
-function Login(){
+function Login(props){
 
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     async function ExecuteLogin(){
         try{
@@ -51,7 +51,7 @@ function Login(){
         </View>
         <View style={styles.footer}>
             <Text>Não tenho conta.</Text>
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={()=>props.navigation.navigate("account")}>
                 <Text style={styles.footerLink}>Criar conta agora.</Text>
             </TouchableOpacity>
         </View>
