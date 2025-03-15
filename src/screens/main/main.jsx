@@ -23,22 +23,28 @@ function Main(){
         }}/>
         <Tab.Screen name="Calendar" component={AbaCalendar}  options={{
             headerTitleAlign: "center",
-            headerShadowVisible: false, // applied here
+            headerShadowVisible: false, 
             tabBarShowLabel: false,
             headerTitle: ()=>{
-                return <Image source={icon.logo} style={{width:125, height:29}}/>
+                return <Image source={icon.logo} style={{
+                    width:125, 
+                    height:29}}/>
             },
             tabBarIcon: ({focused}) =>{
-                return <Image source={icon.calendar} style={{width: 25, height:25, opacity: focused ? 1: 0.3}} />
+                return <Image source={icon.calendar} style={{
+                    width: 25, 
+                    height:25, 
+                    opacity: focused ? 1: 0.3}} />
             }
         }}/>
         <Tab.Screen name="Profile" component={AbaProfile}  options={{
             headerTitleAlign: "center",
-            headerShadowVisible: false, // applied here
-            tabBarShowLabel: false,
             headerTitle: (focused)=>{
-                return <Image source={icon.logo} style={{width:125, height:29}}/>
+                return <Image source={icon.logo} style={
+                    {width:125, height:29}}
+                />
             },
+            tabBarShowLabel: false,
             tabBarIcon: ({focused}) =>{
                 return <Image source={icon.profile} style={{width: 25, height:25,  opacity: focused ? 1: 0.3}} />
             }
