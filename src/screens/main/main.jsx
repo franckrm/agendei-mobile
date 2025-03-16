@@ -39,6 +39,7 @@ function Main(){
         }}/>
         <Tab.Screen name="Profile" component={AbaProfile}  options={{
             headerTitleAlign: "center",
+            headerShadowVisible: false, 
             headerTitle: (focused)=>{
                 return <Image source={icon.logo} style={
                     {width:125, height:29}}
